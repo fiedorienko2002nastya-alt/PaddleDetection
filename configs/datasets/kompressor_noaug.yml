@@ -1,0 +1,25 @@
+metric: COCO
+num_classes: 3
+
+TrainDataset:
+  name: COCODataSet
+  image_dir: train
+  anno_path: annotations/instances_train.json
+  dataset_dir: kompressor_noaug
+  #label_list: labels.txt
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+
+EvalDataset:
+  name: COCODataSet
+  image_dir: valid
+  anno_path: annotations/instances_valid.json
+  dataset_dir: kompressor_noaug
+  #label_list: labels.txt
+  allow_empty: true
+
+TestDataset:
+  name: COCODataSet
+  image_dir: test
+  anno_path: annotations/instances_test.json
+  dataset_dir: kompressor_noaug
+  #label_list: labels.txt
