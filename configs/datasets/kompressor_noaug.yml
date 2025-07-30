@@ -1,12 +1,13 @@
 metric: COCO
 num_classes: 3
+class_names: ["geom_izm", "treshina", "zaboina"]
 
 TrainDataset:
   name: COCODataSet
   image_dir: train
   anno_path: annotations/instances_train.json
   dataset_dir: kompressor_noaug
-  #label_list: labels.txt
+  #use_default_label: false
   data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
 
 EvalDataset:
@@ -14,7 +15,7 @@ EvalDataset:
   image_dir: valid
   anno_path: annotations/instances_valid.json
   dataset_dir: kompressor_noaug
-  #label_list: labels.txt
+  #use_default_label: false
   allow_empty: true
 
 TestDataset:
@@ -22,4 +23,4 @@ TestDataset:
   image_dir: test
   anno_path: annotations/instances_test.json
   dataset_dir: kompressor_noaug
-  #label_list: labels.txt
+  #use_default_label: false
