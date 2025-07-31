@@ -1,0 +1,26 @@
+metric: COCO
+num_classes: 3
+class_names: ["geom_izm", "treshina", "zaboina"]
+
+TrainDataset:
+  name: COCODataSet
+  image_dir: train
+  anno_path: annotations/instances_train.json
+  dataset_dir: kompressor
+  #use_default_label: false
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+
+EvalDataset:
+  name: COCODataSet
+  image_dir: valid
+  anno_path: annotations/instances_valid.json
+  dataset_dir: kompressor
+  #use_default_label: false
+  allow_empty: true
+
+TestDataset:
+  name: COCODataSet
+  image_dir: test
+  anno_path: annotations/instances_test.json
+  dataset_dir: kompressor
+  #use_default_label: false
