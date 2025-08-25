@@ -1,0 +1,24 @@
+metric: COCO
+num_classes: 5
+class_names: ["E", "G", "P", "S", "T"]
+
+TrainDataset:
+  name: COCODataSet
+  image_dir: train
+  anno_path: train/_annotations.coco.json
+  dataset_dir: turbina_coco_seg
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'gt_poly', 'is_crowd']
+
+EvalDataset:
+  name: COCODataSet
+  image_dir: valid
+  anno_path: valid/_annotations.coco.json
+  dataset_dir: turbina_coco_seg
+  allow_empty: true
+
+TestDataset:
+  name: COCODataSet
+  image_dir: test
+  anno_path: test/_annotations.coco.json
+  dataset_dir: turbina_coco_seg
+  
